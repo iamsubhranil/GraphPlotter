@@ -1,6 +1,8 @@
 package sample;
 
 import com.udojava.evalex.Expression;
+import com.udojava.evalex.Function;
+import com.udojava.evalex.Operator;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -17,6 +19,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class Main extends Application {
 
@@ -145,7 +148,6 @@ public class Main extends Application {
         yAxis.setLowerBound(min);
         return series;
     }
-
 
     public static void main(String[] args) {
         System.setProperty("prism.lcdtext", "false");

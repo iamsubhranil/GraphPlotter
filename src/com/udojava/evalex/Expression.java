@@ -940,6 +940,24 @@ public class Expression {
 				return new BigDecimal(ix, mc.getPrecision());
 			}
 		});
+        addFunction(new Function("EXP", 1){
+            @Override
+            public BigDecimal eval(List<BigDecimal> parameters) {
+                return new BigDecimal(Math.exp(parameters.get(0).doubleValue()));
+            }
+        });
+        addFunction(new Function("FACT",1){
+            private BigDecimal fact(BigDecimal i){
+                if(i.doubleValue()==1)
+                    return new BigDecimal(1);
+                return i.multiply(fact(i.subtract(new BigDecimal(1))));
+            }
+
+            @Override
+            public BigDecimal eval(List<BigDecimal> list) {
+                return fact(list.get(0));
+            }
+        });
 
 		variables.put("e", e);
 		variables.put("PI", PI);
