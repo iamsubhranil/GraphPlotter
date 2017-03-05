@@ -1248,6 +1248,19 @@ public class Expression {
 	}
 
 	/**
+	 * Returns the value of a variable, if previously set. Null elsewhere.
+	 *
+	 * @param variable
+	 *            The variable name.
+	 * @return The BigDecimal value of the variable, if previously set.
+	 */
+	public BigDecimal getValueOfVariable(String variable){
+		if(!variables.containsKey(variable))
+			return null;
+		return variables.get(variable);
+	}
+
+	/**
 	 * Sets a variable value.
 	 * 
 	 * @param variable
